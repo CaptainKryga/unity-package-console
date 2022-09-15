@@ -1,0 +1,6 @@
+{
+  "name": "com.captainkryga.console",
+  "version": "1.0.0",
+  "displayName": "Console",
+  "description": "A copy of the classic unity log and adding the ability to use the console in the compiled project to call any commands."
+} 

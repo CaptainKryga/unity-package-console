@@ -1,0 +1,18 @@
+{
+    "name": "captainkryga.console.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e7f59b70bcb5f44a6b14c132829448be"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
