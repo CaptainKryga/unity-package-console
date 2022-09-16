@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace Console
 {
@@ -8,7 +8,8 @@ namespace Console
 	{
 		private GameObject console;
 		private TMP_InputField inputField;
-		private Transform content;
+		private ScrollRect scrollRect;
+		private RectTransform content;
 		private GameObject prefab;
 		private bool isVisible;
 		
@@ -18,8 +19,10 @@ namespace Console
 		{
 			this.console = console;
 			this.inputField = inputField;
-			this.content = content;
+			this.content = (RectTransform)content;
 			this.prefab = prefab;
+
+			scrollRect = content.GetComponentInParent<ScrollRect>();
 
 			Support.CreateItem(prefab, content);
 			inputField.text = "init";
@@ -34,6 +37,8 @@ namespace Console
 		{
 			TMP_Text mess = Support.CreateItem(prefab, content).GetComponent<TMP_Text>();
 			mess.text = message;
+
+			scrollRect.verticalScrollbar.value = 0;
 		}	
 		
 		public void CreateNewMessage(string message, Color color)
@@ -41,6 +46,8 @@ namespace Console
 			TMP_Text mess = Support.CreateItem(prefab, content).GetComponent<TMP_Text>();
 			mess.color = color;
 			mess.text = message;
+			
+			scrollRect.verticalScrollbar.value = 0;
 		}
 
 		public string GetNewCommand()
@@ -50,5 +57,8 @@ namespace Console
 			inputField.text = "";
 			return res;
 		}
+
+		//human message
+		//system message
 	}
 }
