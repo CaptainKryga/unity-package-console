@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Console
 {
@@ -32,6 +33,13 @@ namespace Console
 		public void CreateNewMessage(string message)
 		{
 			TMP_Text mess = Support.CreateItem(prefab, content).GetComponent<TMP_Text>();
+			mess.text = message;
+		}	
+		
+		public void CreateNewMessage(string message, Color color)
+		{
+			TMP_Text mess = Support.CreateItem(prefab, content).GetComponent<TMP_Text>();
+			mess.color = color;
 			mess.text = message;
 		}
 
